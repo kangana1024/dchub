@@ -1,6 +1,8 @@
 import express from 'express'
+import { hello } from '../../api/v1'
+
 const router = express.Router()
 
-router.get('/', (_req, res) => res.json({ ok: true }))
+router.get('/hello/:name', hello.hello)
 
 export default router

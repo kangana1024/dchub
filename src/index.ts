@@ -1,3 +1,5 @@
+import dotenv from 'dotenv'
+dotenv.config()
 import express from 'express'
 import { json, urlencoded } from 'body-parser'
 import compression from 'compression'

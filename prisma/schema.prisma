@@ -7,12 +7,41 @@ datasource db {
 }
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["mongoDb"]
 }
 
+// model DC {
+//   id             String   @id @default(dbgenerated()) @map("_id") @db.ObjectId
+//   dcName         String   @unique
+//   donatePerRound String
+//   address        String
+//   district       String
+//   county         String
+//   province       String
+//   postcode       String
+//   latitude       String
+//   longitude      String
+//   dc_picture     String
+//   userDCID String
+//   userDC         UserDC[] @relation(fields: [userDCID] ,references: [id])
+// }
 
-model User {
-  id  String  @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  // Other fields
+model UserDC {
+  id            String @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  mail          String @unique
+  password      String
+  firstName     String
+  lastName      String
+  lineID        String
+  mobile        String
+  ownPicture    String?
+  idDardPicture String?
+  status        UserStatus
+}
+
+enum UserStatus {
+  PENDING
+  APPROVE
+  REJECT
 }

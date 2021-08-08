@@ -41,3 +41,11 @@ $npm run start
 ## Test URL
 
 Test URL : [localhost:3000/api/v1/hello/vvvvv](http://localhost:3000/api/v1/hello/vvvvv)
+
+## Prisma command
+
+Generate
+
+```bash
+npx prisma generate
+```

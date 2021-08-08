@@ -28,8 +28,8 @@ generator client {
 // }
 
 model UserDC {
-  id            String @id @default(dbgenerated()) @map("_id") @db.ObjectId
-  mail          String @unique
+  id            String     @id @default(dbgenerated()) @map("_id") @db.ObjectId
+  mail          String     @unique
   password      String
   firstName     String
   lastName      String
@@ -38,6 +38,7 @@ model UserDC {
   ownPicture    String?
   idDardPicture String?
   status        UserStatus
+  createdAt     DateTime?   @default(now())
 }
 
 enum UserStatus {

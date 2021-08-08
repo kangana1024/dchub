@@ -28,7 +28,7 @@ export const createUser = async (req: express.Request, res: express.Response) =>
 				mail: reqBody.mail,
 				mobile: reqBody.mobile,
 				password: hashedPassword,
-				status: 'APPROVE',
+				status: 'APPROVE'
 			}
 		})
 		return res.status(200).json({
